@@ -14,12 +14,23 @@ import com.bumptech.glide.Glide
 class GitHubUserListAdapter(): RecyclerView.Adapter<GitHubUserListAdapter.GitHubUserViewHolder>() {
 
     var users = mutableListOf<UserItem>()
+
+    private lateinit var mListener: onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(data: UserItem)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+        mListener = listener
+    }
+
     fun setUserList(users: List<UserItem>) {
         this.users = users.toMutableList()
         notifyDataSetChanged()
     }
 
-    class GitHubUserViewHolder(val itemView :View): RecyclerView.ViewHolder(itemView) {
+    class GitHubUserViewHolder(val itemView :View, val listener: onItemClickListener): RecyclerView.ViewHolder(itemView) {
         val tvLogin = itemView.findViewById<TextView>(R.id.tvLogin)
         val tvId = itemView.findViewById<TextView>(R.id.tvId)
         val ivAvatar = itemView.findViewById<ImageView>(R.id.ivAvatar)
@@ -29,12 +40,16 @@ class GitHubUserListAdapter(): RecyclerView.Adapter<GitHubUserListAdapter.GitHub
             tvId.text = data.id.toString()
 
             Glide.with(itemView.context).load(data.avatar_url).centerCrop().into(ivAvatar)
+
+            itemView.setOnClickListener {
+                listener.onItemClick(data)
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GitHubUserViewHolder {
         return GitHubUserViewHolder(LayoutInflater.from(parent.context)
-            .inflate(R.layout.rv_item,parent,false))
+            .inflate(R.layout.rv_item,parent,false), mListener)
     }
 
     override fun onBindViewHolder(holder: GitHubUserViewHolder, position: Int) {

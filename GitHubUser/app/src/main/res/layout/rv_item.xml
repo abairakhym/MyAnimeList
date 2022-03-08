@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:layout_margin="20dp">
+    android:layout_margin="20dp"
+    android:background="@color/darkSlateGray">
 
     <TextView
         android:id="@+id/tvLogin"
@@ -12,9 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:text="[Elon Musk]"
+        android:layout_marginEnd="5dp"
+        android:text="Elon Musk"
         android:textColor="?android:textColorPrimary"
-        android:textSize="20sp"
+        android:textSize="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivAvatar"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,10 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="40dp"
         android:maxLines="3"
-        android:text="[9]"
+        android:text="1"
         android:textColor="?android:textColorPrimary"
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivAvatar"
         app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
@@ -37,6 +42,6 @@
         android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/avatars" />
+        tools:srcCompat="@drawable/img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
