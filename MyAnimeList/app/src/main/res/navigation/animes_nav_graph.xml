@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/animes_nav_graphh"
+    app:startDestination="@id/homeTopAnimeFragment">
+
+    <fragment
+        android:id="@+id/homeTopAnimeFragment"
+        android:name="android.example.myanimelist.UI.Top.HomeTopAnimeFragment"
+        android:label="HomeTopAnimeFragment">
+        <action
+            android:id="@+id/action_homeTopAnimeFragment_to_seasonalAnimeFragment"
+            app:destination="@id/seasonalAnimeFragment"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/seasonalAnimeFragment"
+        android:name="android.example.myanimelist.UI.Seasonal.SeasonalAnimeFragment"
+        android:label="SeasonalAnimeFragment" />
+    <fragment
+        android:id="@+id/searchAnimeFragment"
+        android:name="android.example.myanimelist.UI.Search.SearchAnimeFragment"
+        android:label="SearchAnimeFragment" >
+        <action
+            android:id="@+id/action_searchAnimeFragment_to_seasonalAnimeFragment"
+            app:destination="@id/seasonalAnimeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedAnimeFragment"
+        android:name="android.example.myanimelist.UI.Saved.SavedAnimeFragment"
+        android:label="SavedAnimeFragment" >
+        <action
+            android:id="@+id/action_savedAnimeFragment_to_seasonalAnimeFragment"
+            app:destination="@id/seasonalAnimeFragment" />
+    </fragment>
+</navigation>
