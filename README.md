@@ -1,2 +1,2 @@
 # Anime List
-#MVVM, Retrofit, Glide, Navigation Components ,Room
+MVVM, Retrofit, Glide, Navigation Components ,Room
