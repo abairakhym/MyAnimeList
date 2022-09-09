@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/homeTopAnimeFragment"
+        android:title="Top Anime"
+        android:icon="@drawable/home_icon"/>
+
+    <item android:id="@+id/seasonalAnimeFragment"
+        android:title="Seasonal"
+        android:icon="@drawable/seasonal_icon"/>
+
+    <item android:id="@+id/searchAnimeFragment"
+        android:title="Search"
+        android:icon="@drawable/search_icon"/>
+
+    <item android:id="@+id/savedAnimeFragment"
+        android:title="My List"
+        android:icon="@drawable/list"/>
+
+</menu>
